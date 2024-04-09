@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package api_proto;
+
+option go_package = "./proto";
+
+import "google/api/annotations.proto";
+
+service GreetService {
+    rpc Greet (GreetRequest) returns (GreetResponses) {
+        option (google.api.http) = {
+            post: "/greet"
+            body: "*"
+        };
+    }
+}

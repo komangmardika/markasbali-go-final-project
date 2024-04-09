@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS Pendidikan;
+
+CREATE TABLE Siswa (
+    ID INT PRIMARY KEY,
+    Nama VARCHAR(255),
+    Kelas VARCHAR(50),
+    Nilai DECIMAL(5, 2)
+);

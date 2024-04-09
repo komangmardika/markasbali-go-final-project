@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS Inventaris;
+
+CREATE TABLE Barang (
+    ID INT PRIMARY KEY,
+    Nama VARCHAR(255),
+    Jumlah INT,
+    Harga DECIMAL(10, 2)
+);
