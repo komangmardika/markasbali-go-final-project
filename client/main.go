@@ -1,12 +1,10 @@
 package main
 
 import (
-	"bufio"
 	"context"
-	"fmt"
-	"os"
+	"encoding/json"
 	"final-project/kelas-beta-golang/proto"
-	"strings"
+	"fmt"
 
 	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
@@ -25,45 +23,33 @@ func main() {
 
 	greetService := proto.NewGreetServiceClient(conn)
 
-	fmt.Println("Masukkan Username :")
-
-	usrNameInput := bufio.NewReader(os.Stdin)
-	usrName, err := usrNameInput.ReadString('\n')
-	if err != nil {
-		logrus.Fatalf("Terjadi Error: %s", err.Error())
-		return
-	}
-
-	usrName = strings.Replace(usrName, "\n", "", 1)
-	usrName = strings.Replace(usrName, "\r", "", 1)
-
-	var phoneNumber int64
-
-	fmt.Println("Masukkan No HP :")
-	_, err = fmt.Scanln(&phoneNumber)
-	if err != nil {
-		logrus.Fatalf("Terjadi Error: %s", err.Error())
-		return
-	}
 	greetResponse, err := Greet(context.Background(),
-		greetService, usrName,
-		phoneNumber)
+		greetService)
 	if err != nil {
 		logrus.Fatalf("Terjadi error saat melakukan greetings, err:%s",
 			err.Error())
 	}
 	fmt.Println(" ====================== ")
-	fmt.Println(greetResponse)
+	
+	// Mendeklarasikan variabel untuk menyimpan hasil unmarshaling
+    var responseData []map[string]interface{}
+
+    // Mengonversi string JSON kembali ke tipe []map[string]interface{}
+    if err := json.Unmarshal([]byte(greetResponse), &responseData); err != nil {
+        fmt.Println("Error:", err)
+        return
+    }
+
+	fmt.Println(responseData)
 }
 
 func Greet(ctx context.Context,
-	client proto.GreetServiceClient, name string, phoneNumber int64) (string, error) {
-	res, err := client.Greet(ctx, &proto.GreetRequest{
-		Username: name,
-		Phone:    phoneNumber,
-	})
+	client proto.GreetServiceClient) (string, error) {
+	res, err := client.Greet(ctx, &proto.GreetRequest{})
+
 	if err != nil {
 		return "", err
 	}
+
 	return res.Greetresponse, nil
 }
