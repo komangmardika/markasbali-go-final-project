@@ -70,7 +70,7 @@ func GetAllByDBName(c *fiber.Ctx) error {
 		})
 	}
 	
-	responseHistoriesData := make([]map[string]interface{}, len(historiesData))
+	responseHistoriesData := make([]map[string]interface{},0)
 	for _, row := range historiesData {
 		responseHistoriesData = append(responseHistoriesData, map[string]interface{}{
 			"id":         row.Id,
