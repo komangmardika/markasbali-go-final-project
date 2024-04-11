@@ -16,6 +16,13 @@ func GetAll() ([]model.AutoRes, error) {
 	return autores.GetAll(config.Mysql.DB)
 }
 
+func GetAllByDBName(nama_database string) ([]model.AutoRes, error) {
+	autores := model.AutoRes{
+		Nama_Database: nama_database,
+	}
+	return autores.GetAllByDbName(config.Mysql.DB)
+}
+
 func GetDistinct() ([]string, error) {
 	autores := model.AutoRes{}
 	return autores.GetDistinct(config.Mysql.DB)

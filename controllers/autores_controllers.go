@@ -11,6 +11,7 @@ import (
 func Route(app *fiber.App) {
 	Group := app.Group("/autores")
 	Group.Get("/", GetDBLatestBackupList)
+	Group.Get("/:db_name", GetAllByDBName)
 	// carsGroup.Post("/")
 }
 
@@ -50,14 +51,42 @@ func GetDBLatestBackupList(c *fiber.Ctx) error {
 		}
     }
 
-
-
 	return c.Status(fiber.StatusOK).JSON(
 		map[string]any{
 			"data":    responseData,
 			"message": "Success",
 		},
 	)
+}
+
+func GetAllByDBName(c *fiber.Ctx) error {
+	nama_database := c.Params("db_name")
+
+	historiesData, err := utils.GetAllByDBName(nama_database)
+	if err != nil {
+		logrus.Error("Error on get database distinct list: ", err.Error())
+		return c.Status(fiber.StatusInternalServerError).JSON(map[string]interface{}{
+			"message": "Server Error",
+		})
+	}
+	
+	responseHistoriesData := make([]map[string]interface{}, len(historiesData))
+	for _, row := range historiesData {
+		responseHistoriesData = append(responseHistoriesData, map[string]interface{}{
+			"id":         row.Id,
+			"file_name":  row.Nama_Database,
+			"timestamp":  row.CreatedAt,
+		})
+	}
+	
+	return c.Status(fiber.StatusOK).JSON(map[string]interface{}{
+		"data": map[string]interface{}{
+			"database_name": nama_database,
+			"histories":     responseHistoriesData,
+		},
+		"message": "Success",
+	})
+	
 }
 
 

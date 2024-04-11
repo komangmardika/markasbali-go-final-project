@@ -104,6 +104,28 @@ func TestGetAll(t *testing.T)  {
 	fmt.Println(resJsonString)
 }
 
+func TestGetAllByDBName(t *testing.T)  {
+	Init()
+
+	autoResData := model.AutoRes{
+		Nama_Database: "Inventaris",
+	}
+
+	res, err := autoResData.GetAllByDbName(config.Mysql.DB)
+
+	assert.Nil(t, err)
+
+	resJson, err := json.Marshal(res)
+
+	if(err != nil){
+		log.Fatal(err)
+	}
+
+	resJsonString := string(resJson)
+
+	fmt.Println(resJsonString)
+}
+
 func TestGetDistinct(t *testing.T)  {
 	Init()
 

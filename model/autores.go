@@ -45,6 +45,19 @@ func (cr *AutoRes) GetAll(db *gorm.DB) ([]AutoRes, error) {
 	return res, nil
 }
 
+func (cr *AutoRes) GetAllByDbName(db *gorm.DB) ([]AutoRes, error) {
+	res := [] AutoRes{}
+	
+	err := db.Model(AutoRes{}).Where("nama_database = ?",cr.Nama_Database).Find(&res).Error
+
+	if err != nil{
+		return []AutoRes{}, err
+	}
+
+	return res, nil
+}
+
+
 func (cr *AutoRes) GetDistinct(db *gorm.DB) ([]string, error) {
     var res [] string
     
