@@ -22,7 +22,7 @@ var Mysql MysqlDB
 
 func ImportBook() error {
 
-	file, err := os.Open("cli-service/modules/reset/seeders/books.csv")
+	file, err := os.Open("modules/reset/seeders/books.csv")
 
 	if err != nil {
 		return err
@@ -83,7 +83,7 @@ func ImportBook() error {
 
 func ImportCar() error {
 
-	file, err := os.Open("cli-service/modules/reset/seeders/cars_500.csv")
+	file, err := os.Open("modules/reset/seeders/cars_500.csv")
 
 	if err != nil {
 		panic(err)
