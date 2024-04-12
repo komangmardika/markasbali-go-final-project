@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="424b98cc-d8a9-419b-bd5e-92dc4ec5b8f3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/databases.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/middlewares/auth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/backup/controllers/web-backup.controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/backup/services/backup-db.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/common/controllers/web-common.controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/common/models/conn.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/common/services/generate-filename.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/common/services/read-databases.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/common/services/remove-tmp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/common/services/ws-sender.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/reset/controllers/web-reset.controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/reset/models/base.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/reset/models/book.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/reset/models/car.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/reset/seeders/books.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/reset/seeders/cars_500.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/reset/services/reset-db.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/modules/reset/services/seed-db.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/.browserslistrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/.vscode/extensions.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/.vscode/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/capacitor.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/ionic.config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/app.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/explore-container/explore-container.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/explore-container/explore-container.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/explore-container/explore-container.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/explore-container/explore-container.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/explore-container/explore-container.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab1/tab1-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab1/tab1.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab1/tab1.page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab1/tab1.page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab1/tab1.page.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab1/tab1.page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab2/tab2-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab2/tab2.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab2/tab2.page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab2/tab2.page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab2/tab2.page.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab2/tab2.page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab3/tab3-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab3/tab3.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab3/tab3.page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab3/tab3.page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab3/tab3.page.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab3/tab3.page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tabs/tabs-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tabs/tabs.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tabs/tabs.page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tabs/tabs.page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tabs/tabs.page.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tabs/tabs.page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/assets/icon/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/assets/shapes.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/global.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/theme/variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/src/zone-flags.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/tabs/tsconfig.spec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/configs/db.config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/configs/http.config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/middlewares/auth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/modules/backup-restore/controllers/grpc.controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/modules/backup-restore/controllers/web.controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/modules/backup-restore/models/db-backup.model.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/modules/backup-restore/models/db.model.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/modules/backup-restore/services/backup-util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/modules/backup-restore/services/file-util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/modules/bases/models/audit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/modules/constants/db-constant.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/storage/pt_abc/mysql-2024-04-12-14-41-58-pt_abc-794d167a-e6b5-44b9-90a6-d63bda1adbf9.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/storage/pt_xyz/mysql-2024-04-12-14-41-58-pt_xyz-8700d95e-19be-4050-b80b-191199e8a533.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ws-service/main.go" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
+  <component name="ProjectId" id="2erffmV6sUpoH1U8KDb9AJ2n3YM" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultGoTemplateProperty": "Go File",
+    "Go Build.cli-service.executor": "Debug",
+    "Go Build.go build main.go.executor": "Debug",
+    "Go Build.web-service.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/powerkomang/final-go/markasbali-go-final-project/cli-service/modules/reset/seeders",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cli-service/modules/reset/seeders" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/cli-service" />
+      <recent name="$PROJECT_DIR$/cli-service/modules/common/services" />
+      <recent name="$PROJECT_DIR$/cli-service/modules/common" />
+      <recent name="$PROJECT_DIR$/web-service/modules" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.cli-service">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="markasbali-go-final-project" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cli-service" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="markasbali-go-final-project" />
+      <working_directory value="$PROJECT_DIR$/cli-service" />
+      <go_parameters value="-i" />
+      <kind value="DIRECTORY" />
+      <package value="markasbali_go_final_project" />
+      <directory value="$PROJECT_DIR$/cli-service" />
+      <filePath value="$PROJECT_DIR$/../markasbali-go-final-project|$PROJECT_DIR$/cli-service/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="web-service" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="markasbali-go-final-project" />
+      <working_directory value="$PROJECT_DIR$/web-service" />
+      <go_parameters value="-i" />
+      <kind value="DIRECTORY" />
+      <package value="markasbali_go_final_project" />
+      <directory value="$PROJECT_DIR$/web-service" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="markasbali-go-final-project" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Go Build.cli-service" />
+      <item itemvalue="Go Build.web-service" />
+    </list>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-322ed176" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="424b98cc-d8a9-419b-bd5e-92dc4ec5b8f3" name="Changes" comment="" />
+      <created>1712667722644</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712667722644</updated>
+      <workItem from="1712667723818" duration="56743000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>
