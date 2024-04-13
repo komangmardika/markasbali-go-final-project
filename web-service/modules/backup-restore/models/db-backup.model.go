@@ -7,19 +7,13 @@ import (
 
 type DbBackup struct {
 	models.Model
-	FileName string `json:"file_name"`
-	DbId     uint   `json:"db_id"`
-	DbRef    Db     `gorm:"foreignKey:DbId"`
+	FileName string `json:"file_name" valid:"required"`
+	DbId     uint   `json:"-" gorm:"foreignKey:DbId" valid:"required"`
 }
 
 func (db *DbBackup) Create(conn *gorm.DB) error {
 	return conn.Model(DbBackup{}).
 		Create(&db).Error
-}
-
-func (db *DbBackup) GetAll(conn *gorm.DB) ([]DbBackup, error) {
-	var dbs []DbBackup
-	return dbs, conn.Find(&dbs).Error
 }
 
 func (db *DbBackup) GetById(conn *gorm.DB) (DbBackup, error) {

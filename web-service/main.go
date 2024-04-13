@@ -10,6 +10,7 @@ import (
 	"markasbali_go_final_project/web-service/configs"
 	common "markasbali_go_final_project/web-service/modules/backup-restore/controllers"
 	"net"
+	"os"
 )
 
 func Init() {
@@ -41,7 +42,7 @@ func main() {
 	app := fiber.New(fiber.Config{BodyLimit: 10 * 1024 * 1024})
 	common.RouteWeb(app)
 
-	baseAddress := fmt.Sprintf("%s:%s", configs.GetFiberHttpHost(), configs.GetFiberHttpPort())
+	baseAddress := fmt.Sprintf("%s:%s", os.Getenv("APP_WEB_SERVICE_URL"), os.Getenv("APP_WEB_SERVICE_PORT"))
 
 	go RunGRPCServer()
 

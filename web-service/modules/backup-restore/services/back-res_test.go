@@ -1,18 +1,27 @@
-package services
+package services_test
 
 import (
+	"encoding/json"
+	"fmt"
+	"github.com/joho/godotenv"
+	"github.com/stretchr/testify/assert"
 	"markasbali_go_final_project/web-service/configs"
 	"markasbali_go_final_project/web-service/modules/backup-restore/models"
-	"os"
+	"testing"
 )
 
-func GetLatestBackedUpDatabaseList() ([]models.DataListDto, error) {
+func Init() {
+	err := godotenv.Load("../../../.env")
+	if err != nil {
+		fmt.Println("env not found, using system env")
+	}
+	configs.OpenDB(false)
+}
+
+func TestGetLatestBackedUpDatabaseList(t *testing.T) {
+	Init()
 	db := models.Db{}
 	dbs, err := db.GetAllWithLatestBackup(configs.Mysql.DB)
-
-	if err != nil {
-		return []models.DataListDto{}, err
-	}
 
 	var head []models.DataListDto
 
@@ -30,18 +39,17 @@ func GetLatestBackedUpDatabaseList() ([]models.DataListDto, error) {
 		})
 
 	}
-
-	return head, nil
+	jsonString, err := json.Marshal(head)
+	fmt.Println(string(jsonString))
+	assert.Nil(t, err)
 }
 
-func GetOneDatabaseWithHistory(dbName string) (models.DataSingleDto, error) {
+func TestGetOneDatabaseWithAllBackup(t *testing.T) {
+	Init()
 	db := models.Db{
-		DatabaseName: dbName,
+		DatabaseName: "pt_abc",
 	}
 	err := db.GetOneDatabaseWithAllBackup(configs.Mysql.DB)
-	if err != nil {
-		return models.DataSingleDto{}, err
-	}
 	var details []models.LatestBackup
 	for _, value := range db.DbBackup {
 		details = append(details, models.LatestBackup{
@@ -55,15 +63,7 @@ func GetOneDatabaseWithHistory(dbName string) (models.DataSingleDto, error) {
 		DatabaseName: db.DatabaseName,
 		Histories:    details,
 	}
-	return head, err
-}
-
-func GetDownloadLatestBackedUpByDatabase(id uint) ([]byte, error) {
-
-	fileContent, err := os.ReadFile("example.txt")
-	if err != nil {
-		return []byte{}, err
-	}
-
-	return fileContent, nil
+	jsonString, err := json.Marshal(head)
+	fmt.Println(string(jsonString))
+	assert.Nil(t, err)
 }

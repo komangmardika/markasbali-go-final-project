@@ -1,1 +1,6 @@
 /client/tabs/node_modules
+.idea
+markasbali-go-final-project.iml
+vendor
+.git3
+.git4

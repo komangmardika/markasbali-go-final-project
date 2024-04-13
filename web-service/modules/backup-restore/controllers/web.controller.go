@@ -4,35 +4,62 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"markasbali_go_final_project/web-service/middlewares"
 	"markasbali_go_final_project/web-service/modules/backup-restore/services"
+	"strconv"
 )
 
 func RouteWeb(app *fiber.App) {
 	webGroup := app.Group("/web", middlewares.CheckAuth)
-	webGroup.Get("/", GetLatestBackedUpDatabaseList)
-	webGroup.Get("/:db_name", GetOneDatabaseHistory)
+	webGroup.Get("/", GetAllDatabasesWithLatestBackup)
+	webGroup.Get("/:db_name", GetOneDatabaseWithLatestHistory)
 	webGroup.Post("/:db_name", PostUploadZipFile)
 	webGroup.Get("/:id_file/download", GetDownloadLatestBackedUpByDatabase)
 }
 
-func GetLatestBackedUpDatabaseList(ctx *fiber.Ctx) error {
+func GetAllDatabasesWithLatestBackup(ctx *fiber.Ctx) error {
+	list, err := services.GetLatestBackedUpDatabaseList()
+	if err != nil {
+		return ctx.Status(fiber.StatusBadRequest).JSON(map[string]any{
+			"message": "cannot get list",
+			"error":   err,
+		})
+	}
 	return ctx.Status(fiber.StatusOK).JSON(map[string]any{
-		"data":    nil,
+		"data":    list,
 		"message": "Success",
 	})
 }
 
-func GetOneDatabaseHistory(ctx *fiber.Ctx) error {
+func GetOneDatabaseWithLatestHistory(ctx *fiber.Ctx) error {
+	dbName := ctx.Params("db_name")
+	history, err := services.GetOneDatabaseWithHistory(dbName)
+	if err != nil {
+		return ctx.Status(fiber.StatusBadRequest).JSON(map[string]any{
+			"message": "cannot get data",
+			"error":   err,
+		})
+	}
 	return ctx.Status(fiber.StatusOK).JSON(map[string]any{
-		"data":    nil,
+		"data":    history,
 		"message": "Success",
 	})
 }
 
 func GetDownloadLatestBackedUpByDatabase(ctx *fiber.Ctx) error {
-	return ctx.Status(fiber.StatusOK).JSON(map[string]any{
-		"data":    nil,
-		"message": "Success",
-	})
+
+	fileId := ctx.Params("id_file")
+	f, _ := strconv.ParseUint(fileId, 10, 64)
+	fileContent, err := services.GetDownloadLatestBackedUpByDatabase(uint(f))
+	if err != nil {
+		return ctx.Status(fiber.StatusBadRequest).JSON(map[string]any{
+			"message": "cannot get data",
+			"error":   err,
+		})
+	}
+
+	ctx.Set(fiber.HeaderContentType, "application/octet-stream")
+	ctx.Set(fiber.HeaderContentDisposition, "attachment; filename=example.txt")
+
+	return ctx.Send(fileContent)
 }
 
 func PostUploadZipFile(ctx *fiber.Ctx) error {
@@ -53,7 +80,7 @@ func PostUploadZipFile(ctx *fiber.Ctx) error {
 		})
 	}
 
-	err = services.BackupSqlFile(ctx, file, dbName)
+	db, dbBackup, err := services.BackupSqlFile(ctx, file, dbName)
 	if err != nil {
 		return ctx.Status(fiber.StatusBadRequest).JSON(map[string]any{
 			"message": "failed to save file",
@@ -62,7 +89,12 @@ func PostUploadZipFile(ctx *fiber.Ctx) error {
 	}
 
 	return ctx.Status(fiber.StatusOK).JSON(map[string]any{
-		"data":    nil,
+		"data": map[string]any{
+			"id":            dbBackup.ID,
+			"database_name": db.DatabaseName,
+			"file_name":     dbBackup.FileName,
+			"timestamp":     dbBackup.UpdatedAt,
+		},
 		"message": "Success",
 	})
 }
