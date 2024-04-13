@@ -11,6 +11,13 @@ func CheckAuth(ctx *fiber.Ctx) error {
 	au := string(ctx.Request().Header.Peek("Authorization"))
 	aus := strings.Split(au, " ")
 
+	if len(aus) != 2 {
+		return ctx.Status(fiber.StatusUnauthorized).JSON(map[string]any{
+			"message": "access unauthorized",
+			"data":    au,
+		})
+	}
+
 	decodedBytes, err := base64.StdEncoding.DecodeString(aus[1])
 
 	if err != nil {

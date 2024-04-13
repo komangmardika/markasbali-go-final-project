@@ -7,7 +7,7 @@ import (
 )
 
 func RouteCommon(app *fiber.App) {
-	resetGroup := app.Group("/cli/backup-restore", middlewares.CheckAuth)
+	resetGroup := app.Group("/cli/common", middlewares.CheckAuth)
 	resetGroup.Get("/db-list", GetListDatabasesFromJson)
 }
 

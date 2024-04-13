@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
 	backup "markasbali_go_final_project/cli-service/modules/backup/controllers"
 	common "markasbali_go_final_project/cli-service/modules/common/controllers"
@@ -20,6 +21,7 @@ func Init() {
 func main() {
 	Init()
 	app := fiber.New()
+	app.Use(cors.New())
 	baseAddress := fmt.Sprintf("%s:%s", os.Getenv("APP_CLI_SERVICE_URL"), os.Getenv("APP_CLI_SERVICE_PORT"))
 
 	reset.RouteReset(app)

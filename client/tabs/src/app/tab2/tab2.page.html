@@ -9,9 +9,36 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Backup</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <div id="container">
+    <ion-list [inset]="true">
+      <ion-item [button]="true" (click)="backupDatabases()">
+        <ion-icon color="danger" slot="start" name="cube" size="large"></ion-icon>
+        <ion-label>
+          <div>Backup All Databases</div>
+          <ion-note color="medium" class="ion-text-wrap">
+            Backup all database from cli-service to web-service
+          </ion-note>
+        </ion-label>
+      </ion-item>
+      <ion-item [button]="true" (click)="getLatestBackup()">
+        <ion-icon color="tertiary" slot="start" name="clipboard" size="large"></ion-icon>
+        <ion-label>
+          <div>Show Latest Databases Backup</div>
+          <ion-note color="medium" class="ion-text-wrap">
+            Show latest databases backup file and timestamp
+          </ion-note>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+  </div>
+  <div class="monitor" style="padding: 20px; font-size: 11px;">
+    <pre *ngIf="result != '' && result != 'Requesting please wait...' ">{{ result | json }}</pre>
+
+  </div>
+
 </ion-content>

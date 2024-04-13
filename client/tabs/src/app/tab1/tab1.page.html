@@ -9,9 +9,35 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Reset</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div id="container">
+    <ion-list [inset]="true">
+      <ion-item [button]="true" (click)="resetDatabases()">
+        <ion-icon color="danger" slot="start" name="refresh" size="large"></ion-icon>
+        <ion-label>
+          <div>Reset All Databases</div>
+          <ion-note color="medium" class="ion-text-wrap">
+            Drop all tables of inside databases
+          </ion-note>
+        </ion-label>
+      </ion-item>
+      <ion-item [button]="true" (click)="seedDatabases()">
+        <ion-icon color="tertiary" slot="start" name="rose" size="large"></ion-icon>
+        <ion-label>
+          <div>Seeding Databases with Data</div>
+          <ion-note color="medium" class="ion-text-wrap">
+            Migrate tables and seeds with data
+          </ion-note>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+  </div>
+  <div class="monitor" style="padding: 20px; font-size: 11px;">
+    <pre *ngIf="result != '' && result != 'Requesting please wait...' ">{{ result | json }}</pre>
+
+  </div>
 </ion-content>

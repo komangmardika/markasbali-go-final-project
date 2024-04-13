@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package restore;
+
+option go_package = "./proto";
+
+service RestoreService{
+  rpc Restore(RestoreRequest) returns (RestoreResponses){}
+}
+
+message RestoreRequest{
+  string module = 1;
+  string process = 2;
+  string dbName = 3;
+}
+
+message RestoreResponses{
+  string restoreResponse = 1;
+}
+
+service FileService {
+  rpc GetFile(FileRequest) returns (FileResponse) {}
+}
+
+message FileRequest {
+  uint32 fileId = 1;
+}
+
+message FileResponse {
+  bytes fileContent = 1;
+}

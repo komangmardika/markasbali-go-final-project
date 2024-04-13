@@ -37,7 +37,7 @@ func GetResetDatabases(ctx *fiber.Ctx) error {
 
 	return ctx.Status(fiber.StatusOK).JSON(map[string]any{
 		"data":    configs,
-		"message": "Success",
+		"message": "databases has been reset successfully",
 	})
 }
 
@@ -81,6 +81,6 @@ func GetSeedDatabases(ctx *fiber.Ctx) error {
 	}
 	return ctx.Status(fiber.StatusOK).JSON(map[string]any{
 		"data":    configs,
-		"message": "Seeding done",
+		"message": "databases has been seeded successfully",
 	})
 }
