@@ -13,4 +13,23 @@
     </ion-toolbar>
   </ion-header>
 
+  <div id="container">
+    <ion-list [inset]="true">
+      <ion-item [button]="true" (click)="restoreDatabases()">
+        <ion-icon color="primary" slot="start" name="stopwatch" size="large"></ion-icon>
+        <ion-label>
+          <div>Restore All Databases</div>
+          <ion-note color="medium" class="ion-text-wrap">
+            Restore all database from web-service to cli-service
+          </ion-note>
+        </ion-label>
+      </ion-item>
+
+    </ion-list>
+  </div>
+  <div class="monitor" style="padding: 20px; font-size: 11px;">
+    <pre *ngIf="result != '' && result != 'Requesting please wait...' ">{{ result | json }}</pre>
+
+  </div>
+
 </ion-content>

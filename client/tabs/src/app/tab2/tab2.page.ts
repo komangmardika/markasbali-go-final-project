@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import {Subject, takeUntil} from "rxjs";
+import {Subject, take, takeUntil} from "rxjs";
 import {BackupService} from "./services/backup.service";
+import {CommonService} from "../tab4/services/common.service";
+import {BackupListInterface} from "../tab4/models/backup-list.interface";
 
 @Component({
   selector: 'app-tab2',
@@ -13,7 +15,8 @@ export class Tab2Page {
   private destroy$: Subject<void> = new Subject<void>();
 
   constructor(
-    private backupService: BackupService
+    private backupService: BackupService,
+    private commonService: CommonService,
   ) {}
 
   public backupDatabases(): void {
@@ -26,7 +29,12 @@ export class Tab2Page {
   }
 
   public getLatestBackup(): void {
-
+    this.result = 'Requesting please wait...';
+    this.commonService.latestBackedUpAllDatabases().pipe(takeUntil(this.destroy$)).subscribe(r => {
+      this.result = r
+    }, err => {
+      this.result = err;
+    })
   }
 
 }

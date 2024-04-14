@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Latest Backup
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button  (click)="refresh()"> <ion-icon name="refresh"></ion-icon> </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Latest Backup</ion-title>
+
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-list [inset]="true">
+      <ion-item [button]="false" *ngFor="let bl of backupList ">
+        <ion-icon color="primary" slot="start" name="finger-print" size="large"></ion-icon>
+        <ion-label>
+          <div>{{ bl.database_name }}</div>
+          <ion-note color="medium" class="ion-text-wrap">
+            <div style="padding: 15px 5px 5px 0;">{{ bl.latest_backup.id + ' - ' + bl.latest_backup.file_name }}</div>
+            <div style="padding: 5px 5px 5px 0;">{{bl.latest_backup.timestamp | date:'medium'}}</div>
+          </ion-note>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

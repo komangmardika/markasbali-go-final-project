@@ -18,7 +18,7 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// RestoreServiceClient is the client API for RestoreService service.
+// RestoreServiceClient is the client API for CommonService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type RestoreServiceClient interface {
@@ -35,14 +35,14 @@ func NewRestoreServiceClient(cc grpc.ClientConnInterface) RestoreServiceClient {
 
 func (c *restoreServiceClient) Restore(ctx context.Context, in *RestoreRequest, opts ...grpc.CallOption) (*RestoreResponses, error) {
 	out := new(RestoreResponses)
-	err := c.cc.Invoke(ctx, "/restore.RestoreService/Restore", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/restore.CommonService/Restore", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// RestoreServiceServer is the server API for RestoreService service.
+// RestoreServiceServer is the server API for CommonService service.
 // All implementations must embed UnimplementedRestoreServiceServer
 // for forward compatibility
 type RestoreServiceServer interface {
@@ -80,7 +80,7 @@ func _RestoreService_Restore_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/restore.RestoreService/Restore",
+		FullMethod: "/restore.CommonService/Restore",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RestoreServiceServer).Restore(ctx, req.(*RestoreRequest))
@@ -88,11 +88,11 @@ func _RestoreService_Restore_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
-// RestoreService_ServiceDesc is the grpc.ServiceDesc for RestoreService service.
+// RestoreService_ServiceDesc is the grpc.ServiceDesc for CommonService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var RestoreService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "restore.RestoreService",
+	ServiceName: "restore.CommonService",
 	HandlerType: (*RestoreServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

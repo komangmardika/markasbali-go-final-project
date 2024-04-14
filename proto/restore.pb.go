@@ -277,9 +277,9 @@ var file_restore_proto_goTypes = []interface{}{
 	(*FileResponse)(nil),     // 3: restore.FileResponse
 }
 var file_restore_proto_depIdxs = []int32{
-	0, // 0: restore.RestoreService.Restore:input_type -> restore.RestoreRequest
+	0, // 0: restore.CommonService.Restore:input_type -> restore.RestoreRequest
 	2, // 1: restore.FileService.GetFile:input_type -> restore.FileRequest
-	1, // 2: restore.RestoreService.Restore:output_type -> restore.RestoreResponses
+	1, // 2: restore.CommonService.Restore:output_type -> restore.RestoreResponses
 	3, // 3: restore.FileService.GetFile:output_type -> restore.FileResponse
 	2, // [2:4] is the sub-list for method output_type
 	0, // [0:2] is the sub-list for method input_type

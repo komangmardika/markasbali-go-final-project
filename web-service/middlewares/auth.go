@@ -3,7 +3,6 @@ package middlewares
 import (
 	"encoding/base64"
 	"github.com/gofiber/fiber/v2"
-	"log"
 	"os"
 	"strings"
 )
@@ -12,7 +11,12 @@ func CheckAuth(ctx *fiber.Ctx) error {
 	au := string(ctx.Request().Header.Peek("Authorization"))
 	aus := strings.Split(au, " ")
 
-	log.Println(aus)
+	if len(aus) != 2 {
+		return ctx.Status(fiber.StatusUnauthorized).JSON(map[string]any{
+			"message": "access unauthorized",
+			"data":    au,
+		})
+	}
 
 	decodedBytes, err := base64.StdEncoding.DecodeString(aus[1])
 

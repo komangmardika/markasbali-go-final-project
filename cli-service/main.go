@@ -5,9 +5,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
-	backup "markasbali_go_final_project/cli-service/modules/backup/controllers"
-	common "markasbali_go_final_project/cli-service/modules/common/controllers"
-	reset "markasbali_go_final_project/cli-service/modules/reset/controllers"
+	"markasbali_go_final_project/cli-service/controllers"
 	"os"
 )
 
@@ -24,9 +22,7 @@ func main() {
 	app.Use(cors.New())
 	baseAddress := fmt.Sprintf("%s:%s", os.Getenv("APP_CLI_SERVICE_URL"), os.Getenv("APP_CLI_SERVICE_PORT"))
 
-	reset.RouteReset(app)
-	backup.RouteBackup(app)
-	common.RouteCommon(app)
+	controllers.RouteCli(app)
 
 	err := app.Listen(baseAddress)
 

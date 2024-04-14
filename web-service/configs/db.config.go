@@ -6,7 +6,7 @@ import (
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"log"
-	"markasbali_go_final_project/web-service/modules/backup-restore/models"
+	"markasbali_go_final_project/web-service/models"
 	"os"
 )
 
