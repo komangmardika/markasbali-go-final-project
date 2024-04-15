@@ -1,34 +1,39 @@
 package services
 
 import (
-	"bytes"
-	"io"
-	"net/http"
-	"os"
+	"encoding/json"
+	"github.com/gorilla/websocket"
 )
 
-func sendMessageToWebSocketService(whatToSend string) error {
-	// Prepare the message to be sent
-	message := []byte(whatToSend)
+var (
+	upgrader websocket.Upgrader
+)
 
-	// Send the message to the WebSocket service
-	resp, err := http.Post(os.Getenv("WS_SERVICE_URL"), "application/json", bytes.NewBuffer(message))
+type ErrorMessage struct {
+	Message string `json:"message"`
+}
+
+func SendErrorToWebSocketServer(errorMessage string) error {
+	// Connect to the WebSocket server
+	conn, _, err := websocket.DefaultDialer.Dial("ws://localhost:8080/ws", nil)
 	if err != nil {
 		return err
 	}
-	defer func(Body io.ReadCloser) {
-		err := Body.Close()
-		if err != nil {
+	defer conn.Close()
 
-		}
-	}(resp.Body)
+	// Create an ErrorMessage struct
+	errMsg := ErrorMessage{
+		Message: errorMessage,
+	}
 
-	err = resp.Body.Close()
+	// Marshal the ErrorMessage to JSON
+	jsonBytes, err := json.Marshal(errMsg)
 	if err != nil {
 		return err
 	}
 
-	if resp.StatusCode != http.StatusOK {
+	// Write the JSON message to the WebSocket server
+	if err := conn.WriteMessage(websocket.TextMessage, jsonBytes); err != nil {
 		return err
 	}
 

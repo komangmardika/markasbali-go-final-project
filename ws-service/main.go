@@ -1,17 +1,21 @@
 package main
 
 import (
+	"github.com/gorilla/websocket"
 	"log"
 	"net/http"
 	"sync"
-	"time"
-
-	"github.com/gorilla/websocket"
 )
 
 var (
-	upgrader         = websocket.Upgrader{}
+	upgrader = websocket.Upgrader{
+		CheckOrigin: func(r *http.Request) bool {
+			// Allow all origins for WebSocket connections
+			return true
+		},
+	}
 	websocketClients = sync.Map{} // Map to store connected clients
+
 )
 
 func websocketHandler(w http.ResponseWriter, r *http.Request) {
@@ -20,18 +24,26 @@ func websocketHandler(w http.ResponseWriter, r *http.Request) {
 		log.Println("upgrade:", err)
 		return
 	}
-	defer conn.Close()
+	defer func(conn *websocket.Conn) {
+		err := conn.Close()
+		if err != nil {
+
+		}
+	}(conn)
 
 	websocketClients.Store(conn.RemoteAddr(), conn)
 	defer websocketClients.Delete(conn.RemoteAddr())
 
 	for {
-		_, _, err := conn.ReadMessage()
-		if err != nil {
-			log.Println("read:", err)
+		t, p, err := conn.ReadMessage()
+		if err == nil {
+			log.Println("read:", string(p), t, err)
+			startSendingMessages(string(p))
 			break
 		}
+
 	}
+
 }
 
 func broadcastMessage(message []byte) {
@@ -44,19 +56,22 @@ func broadcastMessage(message []byte) {
 		return true
 	})
 }
-
 func main() {
-	http.HandleFunc("/ws", websocketHandler)
-	go startSendingMessages() // Start a goroutine to send messages periodically
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	// Start the WebSocket server in a goroutine
+	go func() {
+		// Register the WebSocket handler
+		http.HandleFunc("/ws", websocketHandler)
+
+		// Start the WebSocket server
+		log.Fatal(http.ListenAndServe(":8080", nil))
+	}()
+
+	// Block the main goroutine to prevent the program from exiting
+	select {}
 }
 
-func startSendingMessages() {
-
-	for {
-		// Send a message to all connected clients
-		message := []byte("Hello from Go!")
-		broadcastMessage(message)
-		time.Sleep(5 * time.Second)
-	}
+func startSendingMessages(msg string) {
+	// Send a message to all connected clients
+	message := []byte(msg)
+	broadcastMessage(message)
 }

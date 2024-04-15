@@ -21,11 +21,13 @@ import (
 func RequestLatestBackupInfo(conn []models.MySqlConn) ([]models.MySqlConnWithBackup, error) {
 	resp, err := RequestRestoreToServer("restore", "all-db-latest-history", conn[0].DatabaseName)
 	if err != nil {
+		_ = SendErrorToWebSocketServer(err.Error())
 		return []models.MySqlConnWithBackup{}, err
 	}
 	var detail []models.DataListDto
 	err = json.Unmarshal([]byte(resp), &detail)
 	if err != nil {
+		_ = SendErrorToWebSocketServer(err.Error())
 		return []models.MySqlConnWithBackup{}, err
 	}
 
@@ -57,11 +59,13 @@ func DownloadFile(conn models.MySqlConnWithBackup) (models.MySqlConnWithBackup, 
 	// using grpc request a file and save it to tmp folder
 	resp, err := RequestFileToServer(conn.FileId)
 	if err != nil {
+		_ = SendErrorToWebSocketServer(err.Error())
 		return conn, err
 	}
 
 	err = SaveToFile(resp, os.Getenv("TMP_FOLDER_PATH")+conn.FileName)
 	if err != nil {
+		_ = SendErrorToWebSocketServer(err.Error())
 		return conn, err
 	}
 
@@ -73,6 +77,7 @@ func UnzipFile(conn models.MySqlConnWithBackup) (models.MySqlConnWithBackup, err
 	log.Println(conn.TmpFolder + conn.FileName)
 
 	if err != nil {
+		_ = SendErrorToWebSocketServer(err.Error())
 		return conn, err
 	}
 
@@ -80,6 +85,7 @@ func UnzipFile(conn models.MySqlConnWithBackup) (models.MySqlConnWithBackup, err
 
 		rc, err := f.Open()
 		if err != nil {
+			_ = SendErrorToWebSocketServer(err.Error())
 			return conn, err
 		}
 
@@ -91,33 +97,40 @@ func UnzipFile(conn models.MySqlConnWithBackup) (models.MySqlConnWithBackup, err
 		// Salin isi file dari ZIP ke file tujuan.
 		_, err = io.Copy(fDest, rc)
 		if err != nil {
+			_ = SendErrorToWebSocketServer(err.Error())
 			return conn, err
 		}
 
 		if err != nil {
+			_ = SendErrorToWebSocketServer(err.Error())
 			return conn, err
 		}
 
 		if err != nil {
+			_ = SendErrorToWebSocketServer(err.Error())
 			return conn, err
 		}
 
 		err = fDest.Close()
 		if err != nil {
+			_ = SendErrorToWebSocketServer(err.Error())
 			return models.MySqlConnWithBackup{}, err
 		}
 		if err != nil {
+			_ = SendErrorToWebSocketServer(err.Error())
 			return conn, err
 		}
 	}
 
 	err = r.Close()
 	if err != nil {
+		_ = SendErrorToWebSocketServer(err.Error())
 		return conn, err
 	}
 
 	err = os.Remove(conn.TmpFolder + conn.FileName)
 	if err != nil {
+		_ = SendErrorToWebSocketServer(err.Error())
 		return models.MySqlConnWithBackup{}, err
 	}
 
@@ -130,17 +143,20 @@ func ImportMySQLDump(conn models.MySqlConnWithBackup) error {
 	f := strings.Replace(conn.FileName, ".zip", ".sql", -1)
 	input, err := os.Open(os.Getenv("TMP_FOLDER_PATH") + f)
 	if err != nil {
+		_ = SendErrorToWebSocketServer(err.Error())
 		return err
 	}
 	cmd.Stdin = input
 
 	// Start the command
 	if err := cmd.Start(); err != nil {
+		_ = SendErrorToWebSocketServer(err.Error())
 		return err
 	}
 
 	// Wait for the command to finish executing
 	if err := cmd.Wait(); err != nil {
+		_ = SendErrorToWebSocketServer(err.Error())
 		return err
 	}
 
@@ -148,14 +164,17 @@ func ImportMySQLDump(conn models.MySqlConnWithBackup) error {
 
 	err = input.Close()
 	if err != nil {
+		_ = SendErrorToWebSocketServer(err.Error())
 		return err
 	}
 
 	if err != nil {
+		_ = SendErrorToWebSocketServer(err.Error())
 		return err
 	}
-	err = os.Remove(f)
+	err = os.Remove(os.Getenv("TMP_FOLDER_PATH") + f)
 	if err != nil {
+		_ = SendErrorToWebSocketServer(err.Error())
 		return err
 	}
 	return nil
@@ -164,11 +183,13 @@ func ImportMySQLDump(conn models.MySqlConnWithBackup) error {
 func RestoreDb() error {
 	dbs, err := ReadDatabasesJson()
 	if err != nil {
+		_ = SendErrorToWebSocketServer(err.Error())
 		return err
 	}
 
 	configs, err := RequestLatestBackupInfo(dbs)
 	if err != nil {
+		_ = SendErrorToWebSocketServer(err.Error())
 		return err
 	}
 
@@ -188,7 +209,7 @@ func RestoreDb() error {
 		for _, config := range configs {
 			conn, err := DownloadFile(config)
 			if err != nil {
-				fmt.Println("Error:", err)
+				_ = SendErrorToWebSocketServer(err.Error())
 				return
 			}
 			downloadFileCh <- conn
@@ -204,7 +225,7 @@ func RestoreDb() error {
 		for d := range downloadFileCh {
 			conn, err := UnzipFile(d)
 			if err != nil {
-				fmt.Println("Error:", err)
+				_ = SendErrorToWebSocketServer(err.Error())
 				return
 			}
 			unzipFileCh <- conn
@@ -220,7 +241,7 @@ func RestoreDb() error {
 		for conn := range unzipFileCh {
 			err := ImportMySQLDump(conn)
 			if err != nil {
-				fmt.Println("Error:", err)
+				_ = SendErrorToWebSocketServer(err.Error())
 				return
 			}
 			restoreDumpCh <- conn

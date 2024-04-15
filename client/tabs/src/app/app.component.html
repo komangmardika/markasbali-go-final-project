@@ -1,3 +1,28 @@
 <ion-app>
   <ion-router-outlet></ion-router-outlet>
+  <ion-modal [isOpen]="messages.length > 0" (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Websocket Notification</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="cancel()" [strong]="true">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+
+          <ion-item [button]="false">
+            <ion-icon color="primary" slot="start" name="bug-outline" size="large"></ion-icon>
+            <ion-label>
+              <ion-note color="medium" class="ion-text-wrap">
+                <div>{{messages}}</div>
+              </ion-note>
+            </ion-label>
+          </ion-item>
+
+
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-app>
