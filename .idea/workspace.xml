@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="424b98cc-d8a9-419b-bd5e-92dc4ec5b8f3" name="Changes" comment="simplify structure">
-      <change afterPath="$PROJECT_DIR$/cli-service/models/response.dto.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cli-service/services/byte-to-file.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cli-service/services/restore-db.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cli-service/services/restore-db_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/tmp/mysql-2024-04-15-14-44-04-pt_abc-b868a9b5-f9c0-4dd8-b03b-c792e629a08c.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/tmp/mysql-2024-04-15-14-44-04-pt_xyz-469b45ac-45dc-43b9-9464-0a8c0d27197a.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/storage/pt_abc/mysql-2024-04-15-14-44-04-pt_abc-b868a9b5-f9c0-4dd8-b03b-c792e629a08c.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web-service/storage/pt_xyz/mysql-2024-04-15-14-44-04-pt_xyz-469b45ac-45dc-43b9-9464-0a8c0d27197a.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/controllers/cli.controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/controllers/cli.controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/models/conn.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/models/conn.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/services/seed-db.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/services/seed-db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/controllers/grpc.controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/controllers/grpc.controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/models/db-backup.model.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/models/db-backup.model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/services/back-res.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/services/back-res.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/storage/pt_abc/mysql-2024-04-13-01-11-21-pt_abc-06488370-d874-4851-8f9e-f1c4b9d5c86c.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/storage/pt_xyz/mysql-2024-04-13-01-11-21-pt_xyz-3b46e3e8-47d2-493b-9764-26864096f6f0.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli-service/services/restore-db.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/services/restore-db.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +217,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712667722644</updated>
       <workItem from="1712667723818" duration="75807000" />
-      <workItem from="1713115406775" duration="22237000" />
+      <workItem from="1713115406775" duration="23874000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <option name="closed" value="true" />

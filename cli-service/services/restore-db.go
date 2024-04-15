@@ -31,27 +31,22 @@ func RequestLatestBackupInfo(conn []models.MySqlConn) ([]models.MySqlConnWithBac
 
 	var connWithBackups []models.MySqlConnWithBackup
 
-	i, j := 0, 0
-	for i < len(conn) && j < len(detail) {
-		if conn[i].DatabaseName == detail[j].DatabaseName {
-			// Append a new struct C to the slice if names match
-			connWithBackups = append(connWithBackups, models.MySqlConnWithBackup{
-				DatabaseName: conn[i].DatabaseName,
-				DbUsername:   conn[i].DbUsername,
-				DbPassword:   conn[i].DbPassword,
-				DbPort:       conn[i].DbPort,
-				DbHost:       conn[i].DbHost,
-				FileId:       detail[j].LatestBackup.ID,
-				FileName:     detail[j].LatestBackup.FileName,
-				TmpFolder:    os.Getenv("TMP_FOLDER_PATH"),
-				SqlFileName:  strings.Replace(detail[j].LatestBackup.FileName, "zip", "sql", -1),
-			})
-			i++
-			j++
-		} else if conn[i].DatabaseName < detail[j].DatabaseName {
-			i++
-		} else {
-			j++
+	for i := 0; i < len(conn); i++ {
+		for j := 0; j < len(detail); j++ {
+			if conn[i].DatabaseName == detail[j].DatabaseName {
+				connWithBackups = append(connWithBackups, models.MySqlConnWithBackup{
+					DatabaseName: conn[i].DatabaseName,
+					DbUsername:   conn[i].DbUsername,
+					DbPassword:   conn[i].DbPassword,
+					DbPort:       conn[i].DbPort,
+					DbHost:       conn[i].DbHost,
+					FileId:       detail[j].LatestBackup.ID,
+					FileName:     detail[j].LatestBackup.FileName,
+					TmpFolder:    os.Getenv("TMP_FOLDER_PATH"),
+					SqlFileName:  strings.Replace(detail[j].LatestBackup.FileName, "zip", "sql", -1),
+				})
+				break
+			}
 		}
 	}
 
