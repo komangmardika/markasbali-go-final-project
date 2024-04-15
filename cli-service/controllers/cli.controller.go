@@ -24,15 +24,8 @@ func GetBackupDatabases(ctx *fiber.Ctx) error {
 		})
 	}
 
-	if err != nil {
-		return ctx.Status(fiber.StatusBadRequest).JSON(map[string]any{
-			"message": "cannot delete files inside tmp folder",
-			"error":   err,
-		})
-	}
-
 	return ctx.Status(fiber.StatusOK).JSON(map[string]any{
-		"message": "Backup done",
+		"message": "databases has been backed up successfully",
 	})
 }
 
@@ -84,7 +77,7 @@ func GetRestoreDatabases(ctx *fiber.Ctx) error {
 	}
 
 	return ctx.Status(fiber.StatusOK).JSON(map[string]any{
-		"message": "databases has been reset successfully",
+		"message": "databases has been restored successfully",
 	})
 }
 

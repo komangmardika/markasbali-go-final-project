@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import {Subject, take, takeUntil} from "rxjs";
 import {BackupService} from "./services/backup.service";
 import {CommonService} from "../tab4/services/common.service";
-import {BackupListInterface} from "../tab4/models/backup-list.interface";
 
 @Component({
   selector: 'app-tab2',

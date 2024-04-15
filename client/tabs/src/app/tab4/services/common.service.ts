@@ -18,4 +18,13 @@ export class CommonService {
 
     return this.http.get<any>(`${this.apiUrl}`, { headers });
   }
+
+  allBackedUpOneDatabases(dbName: string): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `X-TOKEN ${this.token}`
+    });
+
+    return this.http.get<any>(`${this.apiUrl}/${dbName}`, { headers });
+  }
 }
