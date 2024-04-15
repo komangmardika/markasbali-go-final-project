@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="424b98cc-d8a9-419b-bd5e-92dc4ec5b8f3" name="Changes" comment="simplify structure">
-      <change afterPath="$PROJECT_DIR$/cli-service/services/ws-sender_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cli-service/tmp/mysql-2024-04-15-14-44-04-pt_abc-b868a9b5-f9c0-4dd8-b03b-c792e629a08c.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cli-service/tmp/mysql-2024-04-15-14-44-04-pt_xyz-469b45ac-45dc-43b9-9464-0a8c0d27197a.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tabs/services/ws.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cli-service/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/services/restore-db.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/services/restore-db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/services/ws-sender.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/services/ws-sender.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/tabs/tabs.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/tabs/tabs.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ws-service/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/ws-service/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +239,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712667722644</updated>
       <workItem from="1712667723818" duration="75807000" />
-      <workItem from="1713115406775" duration="33415000" />
+      <workItem from="1713115406775" duration="33505000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <option name="closed" value="true" />
