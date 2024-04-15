@@ -4,61 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="424b98cc-d8a9-419b-bd5e-92dc4ec5b8f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab4/models/backup-list.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab4/services/common.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab4/tab4-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab4/tab4.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab4/tab4.page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab4/tab4.page.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab4/tab4.page.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/tabs/src/app/tab4/tab4.page.ts" afterDir="false" />
+    <list default="true" id="424b98cc-d8a9-419b-bd5e-92dc4ec5b8f3" name="Changes" comment="simplify structure">
+      <change afterPath="$PROJECT_DIR$/cli-service/models/response.dto.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/services/byte-to-file.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/services/restore-db.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli-service/services/restore-db_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/databases.json" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/backup/controllers/web-backup.controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/controllers/cli.controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/backup/services/backup-db.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/services/backup-db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/common/controllers/web-common.controller.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/common/models/conn.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/models/conn.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/common/services/generate-filename.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/services/generate-filename.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/common/services/read-databases.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/services/read-databases.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/common/services/remove-tmp.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/services/remove-tmp.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/common/services/ws-sender.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/services/ws-sender.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/reset/controllers/web-reset.controller.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/reset/models/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/models/base.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/reset/models/book.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/models/book.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/reset/models/car.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/models/car.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/reset/seeders/books.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/seeders/books.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/reset/seeders/cars_500.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/seeders/cars_500.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/reset/services/reset-db.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/services/reset-db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/reset/services/seed-db.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/services/seed-db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/restore/controllers/grpc-restore.controller.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/modules/restore/controllers/web-restore.controller.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/tab1/tab1.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/tab1/tab1.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/tab2/tab2.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/tab2/tab2.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/tab2/tab2.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/tab2/tab2.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/tab3/tab3.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/tab3/tab3.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/tab3/tab3.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/tab3/tab3.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/tabs/tabs-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/tabs/tabs-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/tabs/tabs.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/tabs/tabs.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli-service/controllers/cli.controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/controllers/cli.controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli-service/models/conn.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/models/conn.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli-service/services/seed-db.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/services/seed-db.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/tabs/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/restore.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/restore.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proto/restore_grpc.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/proto/restore_grpc.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/configs/db.config.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/configs/db.config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/configs/http.config.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-service/controllers/grpc.controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/controllers/grpc.controller.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-service/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/middlewares/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/middlewares/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/modules/backup-restore/controllers/grpc.controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/controllers/grpc.controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/modules/backup-restore/controllers/web.controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/controllers/web.controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/modules/backup-restore/models/db-backup.model.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/models/db-backup.model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/modules/backup-restore/models/db.model.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/models/db.model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/modules/backup-restore/models/response.dto.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/models/response.dto.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/modules/backup-restore/services/back-res.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/services/back-res.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/modules/backup-restore/services/back-res_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/services/back-res_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/modules/backup-restore/services/backup-util.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/services/backup-util.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/modules/backup-restore/services/file-util.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/services/file-util.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/modules/bases/models/audit.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/models/audit.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-service/modules/constants/db-constant.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-service/models/db-backup.model.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/models/db-backup.model.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-service/services/back-res.go" beforeDir="false" afterPath="$PROJECT_DIR$/web-service/services/back-res.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-service/storage/pt_abc/mysql-2024-04-13-01-11-21-pt_abc-06488370-d874-4851-8f9e-f1c4b9d5c86c.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-service/storage/pt_xyz/mysql-2024-04-13-01-11-21-pt_xyz-3b46e3e8-47d2-493b-9764-26864096f6f0.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,15 +64,20 @@
     "Go Build.cli-service.executor": "Debug",
     "Go Build.go build main.go.executor": "Debug",
     "Go Build.web-service.executor": "Debug",
+    "Go Test.TestDownloadFile in markasbali_go_final_project/cli-service/services.executor": "Run",
+    "Go Test.TestRequestLatestBackupInfo in markasbali_go_final_project/cli-service/services.executor": "Run",
+    "Go Test.TestUnzipFile in markasbali_go_final_project/cli-service/services.executor": "Debug",
+    "Go Test.TestZipSqlFile in markasbali_go_final_project/cli-service/services.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/powerkomang/final-go/markasbali-go-final-project/client/tabs/src/app/tab4",
+    "last_opened_file_path": "/Users/powerkomang/final-go/markasbali-go-final-project/cli-service/models",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -126,6 +92,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cli-service/models" />
       <recent name="$PROJECT_DIR$/client/tabs/src/app/tab4" />
       <recent name="$PROJECT_DIR$/cli-service/modules/reset/seeders" />
     </key>
@@ -137,7 +104,7 @@
       <recent name="$PROJECT_DIR$/cli-service/services" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.web-service">
+  <component name="RunManager" selected="Go Build.cli-service">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="markasbali-go-final-project" />
       <working_directory value="$PROJECT_DIR$" />
@@ -168,6 +135,54 @@
       <filePath value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestDownloadFile in markasbali_go_final_project/cli-service/services" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="markasbali-go-final-project" />
+      <working_directory value="$PROJECT_DIR$/cli-service/services" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="markasbali_go_final_project/cli-service/services" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestDownloadFile\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestRequestLatestBackupInfo in markasbali_go_final_project/cli-service/services" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="markasbali-go-final-project" />
+      <working_directory value="$PROJECT_DIR$/cli-service/services" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="markasbali_go_final_project/cli-service/services" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestRequestLatestBackupInfo\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestUnzipFile in markasbali_go_final_project/cli-service/services" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="markasbali-go-final-project" />
+      <working_directory value="$PROJECT_DIR$/cli-service/services" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="markasbali_go_final_project/cli-service/services" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestUnzipFile\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestZipSqlFile in markasbali_go_final_project/cli-service/services" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="markasbali-go-final-project" />
+      <working_directory value="$PROJECT_DIR$/cli-service/services" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="markasbali_go_final_project/cli-service/services" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestZipSqlFile\E$" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="markasbali-go-final-project" />
       <working_directory value="$PROJECT_DIR$" />
@@ -181,7 +196,19 @@
     <list>
       <item itemvalue="Go Build.cli-service" />
       <item itemvalue="Go Build.web-service" />
+      <item itemvalue="Go Test.TestDownloadFile in markasbali_go_final_project/cli-service/services" />
+      <item itemvalue="Go Test.TestUnzipFile in markasbali_go_final_project/cli-service/services" />
+      <item itemvalue="Go Test.TestZipSqlFile in markasbali_go_final_project/cli-service/services" />
+      <item itemvalue="Go Test.TestRequestLatestBackupInfo in markasbali_go_final_project/cli-service/services" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.TestZipSqlFile in markasbali_go_final_project/cli-service/services" />
+        <item itemvalue="Go Test.TestUnzipFile in markasbali_go_final_project/cli-service/services" />
+        <item itemvalue="Go Test.TestDownloadFile in markasbali_go_final_project/cli-service/services" />
+        <item itemvalue="Go Test.TestRequestLatestBackupInfo in markasbali_go_final_project/cli-service/services" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -199,6 +226,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712667722644</updated>
       <workItem from="1712667723818" duration="75807000" />
+      <workItem from="1713115406775" duration="22237000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <option name="closed" value="true" />
@@ -217,7 +245,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="push" />
-    <option name="LAST_COMMIT_MESSAGE" value="push" />
+    <MESSAGE value="simplify structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="simplify structure" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

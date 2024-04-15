@@ -60,7 +60,16 @@ func GetOneDatabaseWithHistory(dbName string) (models.DataSingleDto, error) {
 
 func GetDownloadLatestBackedUpByDatabase(id uint) ([]byte, error) {
 
-	fileContent, err := os.ReadFile("example.txt")
+	dbBackup := models.DbBackup{
+		Model: models.Model{
+			ID: id,
+		},
+	}
+	byId, err := dbBackup.GetById(configs.Mysql.DB)
+	if err != nil {
+		return nil, err
+	}
+	fileContent, err := os.ReadFile(os.Getenv("STORAGE_FOLDER_PATH") + byId.DatabaseName + "/" + byId.FileName)
 	if err != nil {
 		return []byte{}, err
 	}

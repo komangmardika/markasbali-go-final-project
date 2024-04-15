@@ -44,9 +44,9 @@ func main() {
 	app.Use(cors.New())
 	controllers.RouteWeb(app)
 	baseAddress := fmt.Sprintf("%s:%s", os.Getenv("APP_WEB_SERVICE_URL"), os.Getenv("APP_WEB_SERVICE_PORT"))
-
-	err := app.Listen(baseAddress)
 	go RunGRPCServer()
+	err := app.Listen(baseAddress)
+
 	if err != nil {
 		panic(err)
 	}
