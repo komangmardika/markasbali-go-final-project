@@ -1,4 +1,5 @@
 # GO backup and restore databases
+this repo maintained by <b>Komang Mardika</b> with contributor <b>Dewa Antasena</b><br>
 
 This is a repo for <br><b>markasbali ft kominfo final project for hacker class: programming with golang</b> <br>
 The app features such as backup and restore multiple database, it implements some go great features such as:
@@ -13,7 +14,8 @@ The app features such as backup and restore multiple database, it implements som
 So what is first thing you must do to run it? <br><br>
 1. run this command <br><br>
 <code>go mod tidy</code> <br><br>
-2. then you must create empty MySQL / MariaDB databases see <br><br><code>cli-service/config.json</code> for databases list<br><br>
+2. then you must create empty MySQL / MariaDB databases see <br><br><code>cli-service/config.json</code> for databases list<br>
+you also must create database named <code>finaldb</code> to register all backup information<br>
 3. then you have to run all these go services with command (1 terminal tab for 1 service) there are 3 service atm cli/web/webscoket<br><br>
 <code>go run main.go</code> <br><br>
 4. for frontend (mobile app) it use ionic framework
@@ -42,5 +44,11 @@ You need to use node lts (version 20 atm) and then run it locally <br><br>
 - restore all databases with latest backup file
 - catch error using websocket
 
-<br>
-this repo maintained by <b>Komang Mardika</b> with contributor <b>Dewa Antasena</b>
+### how to use the app? <br>
+
+1. run reset all databases first
+2. seed all databases with data from csv files once it done you will have data to backed up
+3. run backup all databases
+4. you can see backup information on info tab
+5. run reset all databases if you want to restore it
+6. run restore all databases to restore data from latest backed up file
