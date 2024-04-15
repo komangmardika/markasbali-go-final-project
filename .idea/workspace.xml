@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="424b98cc-d8a9-419b-bd5e-92dc4ec5b8f3" name="Changes" comment="simplify structure">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/controllers/cli.controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/controllers/cli.controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/tmp/mysql-2024-04-15-14-44-04-pt_abc-b868a9b5-f9c0-4dd8-b03b-c792e629a08c.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli-service/tmp/mysql-2024-04-15-14-44-04-pt_xyz-469b45ac-45dc-43b9-9464-0a8c0d27197a.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/tab2/tab2.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/tab2/tab2.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/tab2/tab2.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/tab2/tab2.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/tab4/models/backup-list.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/tab4/models/backup-list.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/tab4/services/common.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/tab4/services/common.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/tab4/tab4.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/tab4/tab4.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tabs/src/app/tab4/tab4.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/tabs/src/app/tab4/tab4.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli-service/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/cli-service/config.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +212,7 @@
       <option name="presentableId" value="Default" />
       <updated>1712667722644</updated>
       <workItem from="1712667723818" duration="75807000" />
-      <workItem from="1713115406775" duration="27078000" />
+      <workItem from="1713115406775" duration="27335000" />
     </task>
     <task id="LOCAL-00001" summary="push">
       <option name="closed" value="true" />
