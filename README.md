@@ -11,7 +11,7 @@ The app features such as backup and restore multiple database, it implements som
 - websocket using gorilla websocket
 - unit testing
 <br><br>
-So what is first thing you must do to run it? <br><br>
+So what are first things you must do to run it? <br><br>
 1. run this command <br><br>
 <code>go mod tidy</code> <br><br>
 2. then you must create empty MySQL / MariaDB databases see <br><br><code>cli-service/config.json</code> for databases list<br>
@@ -35,7 +35,7 @@ You need to use node lts (version 20 atm) and then run it locally <br><br>
 - Mobile App (client/tabs) / frontend
 - gRPC (proto) / backend
 
-### what you can do within the app: <br>
+### what you can do with the app: <br>
 - reset maintained databases (drop all tables)
 - migrate and seeding databases with table books and cars with csv data
 - run backup all databases

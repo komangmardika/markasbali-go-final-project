@@ -1,7 +1,6 @@
 import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {Subscription, takeUntil} from "rxjs";
+import {Subscription} from "rxjs";
 import {WebSocketService} from "./tabs/services/ws.service";
-import {BackupListInterface, SingleBackupListInterface} from "./tab4/models/backup-list.interface";
 import {OverlayEventDetail} from "@ionic/core/components";
 import {IonModal} from "@ionic/angular";
 
