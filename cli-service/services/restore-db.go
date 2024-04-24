@@ -193,10 +193,10 @@ func RestoreDb() error {
 		return err
 	}
 
-	downloadFileCh := make(chan models.MySqlConnWithBackup)
-	unzipFileCh := make(chan models.MySqlConnWithBackup)
-	restoreDumpCh := make(chan models.MySqlConnWithBackup)
-	doneCh := make(chan models.MySqlConnWithBackup)
+	downloadFileCh := make(chan models.MySqlConnWithBackup, len(dbs))
+	unzipFileCh := make(chan models.MySqlConnWithBackup, len(dbs))
+	restoreDumpCh := make(chan models.MySqlConnWithBackup, len(dbs))
+	doneCh := make(chan models.MySqlConnWithBackup, len(dbs))
 
 	var wg sync.WaitGroup
 
