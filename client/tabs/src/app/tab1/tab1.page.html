@@ -36,8 +36,18 @@
 
     </ion-list>
   </div>
-  <div class="monitor" style="padding: 20px; font-size: 11px;">
-    <pre *ngIf="result != '' && result != 'Requesting please wait...' ">{{ result | json }}</pre>
-
+  <div id="container-2" style="margin-top: 30px;" *ngIf="progressMessage != ''">
+    <ion-item>
+      <ion-note>{{progressMessage}}</ion-note>
+    </ion-item>
   </div>
+
+  <ion-alert
+    [isOpen]="alert"
+    header="Notification"
+    message="{{message}}"
+    [buttons]="buttonList"
+    (didDismiss)="alert = false"
+  ></ion-alert>
+
 </ion-content>

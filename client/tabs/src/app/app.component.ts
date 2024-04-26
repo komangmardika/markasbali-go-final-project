@@ -22,8 +22,10 @@ export class AppComponent implements OnInit, OnDestroy{
     this.messageSubscription = this.webSocketService.getMessage().subscribe(
       (message) => {
         console.log('Received message:', message);
-        this.messages.push(message.message);
-        this.modalOpen = true
+        if(message.type == 'error') {
+          this.messages.push(message.message);
+          this.modalOpen = true
+        }
       },
       (error) => {
         console.error('WebSocket error:', error);

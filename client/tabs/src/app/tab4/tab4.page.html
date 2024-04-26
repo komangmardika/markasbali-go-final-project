@@ -22,7 +22,7 @@
       <ion-item [button]="false" *ngFor="let bl of backupList " (click)="openDetail(bl)">
         <ion-icon color="primary" slot="start" name="finger-print" size="large"></ion-icon>
         <ion-label>
-          <div>{{ bl.database_name }}</div>
+          <div>{{ bl.database_name.toUpperCase() }}</div>
           <ion-note color="medium" class="ion-text-wrap">
             <div style="padding: 15px 5px 5px 0;">{{ bl.latest_backup?.id + ' - ' + bl.latest_backup?.file_name }}</div>
             <div style="padding: 5px 5px 5px 0;">{{bl.latest_backup?.timestamp | date:'medium'}}</div>
@@ -37,7 +37,7 @@
     <ng-template>
       <ion-header>
         <ion-toolbar>
-          <ion-title>Database {{dbName}}</ion-title>
+          <ion-title>DATABASE {{dbName.toUpperCase()}}</ion-title>
           <ion-buttons slot="end">
             <ion-button (click)="cancel()" [strong]="true">Close</ion-button>
           </ion-buttons>

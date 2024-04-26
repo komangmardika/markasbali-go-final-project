@@ -20,7 +20,6 @@ type MysqlDB struct {
 var Mysql MysqlDB
 
 func ImportBook() error {
-
 	file, err := os.Open("seeders/books.csv")
 
 	if err != nil {
@@ -75,7 +74,6 @@ func ImportBook() error {
 	<-done
 
 	err = file.Close()
-
 	return err
 
 }
@@ -93,6 +91,7 @@ func ImportCar() error {
 		if err != nil {
 			panic(err)
 		}
+
 	}(file)
 
 	rowChannel := make(chan []string)

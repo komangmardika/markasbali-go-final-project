@@ -87,6 +87,7 @@ func GetSeedDatabases(ctx *fiber.Ctx) error {
 	// loop for every connection send it to resetDb function
 	for _, config := range configs {
 		services.OpenDB(false, config)
+
 		err := services.AutoMigrate(services.Mysql.DB)
 		if err != nil {
 			return ctx.Status(fiber.StatusBadRequest).JSON(map[string]any{
@@ -94,7 +95,7 @@ func GetSeedDatabases(ctx *fiber.Ctx) error {
 				"error":   err,
 			})
 		}
-
+		_ = services.SendSeedingProcessToWebSocketServer(config.DatabaseName, "Books")
 		err = services.ImportBook()
 		if err != nil {
 			return ctx.Status(fiber.StatusBadRequest).JSON(map[string]any{
@@ -102,6 +103,7 @@ func GetSeedDatabases(ctx *fiber.Ctx) error {
 				"error":   err,
 			})
 		}
+		_ = services.SendSeedingProcessToWebSocketServer(config.DatabaseName, "Cars")
 		err = services.ImportCar()
 		if err != nil {
 			return ctx.Status(fiber.StatusBadRequest).JSON(map[string]any{

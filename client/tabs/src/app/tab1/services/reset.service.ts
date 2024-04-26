@@ -27,4 +27,13 @@ export class ResetService {
 
     return this.http.get<any>(`${this.apiUrl}/reset/seed`, { headers });
   }
+
+  public async dbLst(): Promise<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `X-TOKEN ${this.token}`
+    });
+
+    return await this.http.get<any>(`${this.apiUrl}/common/db-list`, { headers }).toPromise();
+  }
 }
