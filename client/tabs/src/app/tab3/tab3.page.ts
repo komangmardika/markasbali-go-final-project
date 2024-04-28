@@ -29,7 +29,7 @@ export class Tab3Page {
       this.result = res;
       this.result = res;
       this.alert = true;
-      this.message = f.data.length + ' Databases has been backed up successfully'
+      this.message = f.data.length + ' Databases has been restored successfully'
       this.buttonList = ['Close'];
     }, err => {
       this.result = err;
