@@ -18,4 +18,12 @@ export class RestoreService {
 
     return this.http.get<any>(`${this.apiUrl}/restore`, { headers });
   }
+  restoreNoChannel(): Observable<any> {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `X-TOKEN ${this.token}`
+    });
+
+    return this.http.get<any>(`${this.apiUrl}/restore-no-channel`, { headers });
+  }
 }

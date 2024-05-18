@@ -21,7 +21,12 @@ func SendErrorToWebSocketServer(errorMessage string) error {
 	if err != nil {
 		return err
 	}
-	defer conn.Close()
+	defer func(conn *websocket.Conn) {
+		err := conn.Close()
+		if err != nil {
+
+		}
+	}(conn)
 
 	// Create an ErrorMessage struct
 	errMsg := ErrorMessage{
@@ -50,7 +55,12 @@ func SendSeedingProcessToWebSocketServer(dbName string, tableName string) error 
 	if err != nil {
 		return err
 	}
-	defer conn.Close()
+	defer func(conn *websocket.Conn) {
+		err := conn.Close()
+		if err != nil {
+
+		}
+	}(conn)
 
 	// Create an ErrorMessage struct
 	errMsg := ErrorMessage{

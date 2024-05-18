@@ -10,6 +10,7 @@ func RouteCli(app *fiber.App) {
 	cliGroup := app.Group("/cli", middlewares.CheckAuth)
 	cliGroup.Get("/backup", GetBackupDatabases)
 	cliGroup.Get("/restore", GetRestoreDatabases)
+	cliGroup.Get("/restore-no-channel", GetRestoreNoChannelDatabases)
 	cliGroup.Get("/common/db-list", GetListDatabasesFromJson)
 	cliGroup.Get("/reset", GetResetDatabases)
 	cliGroup.Get("/reset/seed", GetSeedDatabases)
@@ -68,6 +69,22 @@ func GetResetDatabases(ctx *fiber.Ctx) error {
 func GetRestoreDatabases(ctx *fiber.Ctx) error {
 
 	err := services.RestoreDb()
+
+	if err != nil {
+		return ctx.Status(fiber.StatusBadRequest).JSON(map[string]any{
+			"message": "error restoring database",
+			"error":   err,
+		})
+	}
+
+	return ctx.Status(fiber.StatusOK).JSON(map[string]any{
+		"message": "databases has been restored successfully",
+	})
+}
+
+func GetRestoreNoChannelDatabases(ctx *fiber.Ctx) error {
+
+	err := services.RestoreDbNoChannel()
 
 	if err != nil {
 		return ctx.Status(fiber.StatusBadRequest).JSON(map[string]any{

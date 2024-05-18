@@ -16,6 +16,7 @@ import (
 	"path/filepath"
 	"strings"
 	"sync"
+	"time"
 )
 
 func RequestLatestBackupInfo(conn []models.MySqlConn) ([]models.MySqlConnWithBackup, error) {
@@ -181,6 +182,8 @@ func ImportMySQLDump(conn models.MySqlConnWithBackup) error {
 }
 
 func RestoreDb() error {
+	start := time.Now()
+	defer logDuration(start, "RestoreDbChannel")
 	dbs, err := ReadDatabasesJson()
 	if err != nil {
 		_ = SendErrorToWebSocketServer(err.Error())

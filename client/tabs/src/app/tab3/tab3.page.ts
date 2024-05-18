@@ -36,6 +36,20 @@ export class Tab3Page {
     })
   }
 
+  public async restoreNoChannelDatabases(): Promise<void> {
+    this.result = 'Requesting please wait...';
+    let f = await this.resetService.dbLst()
+    this.restoreService.restoreNoChannel().pipe(takeUntil(this.destroy$)).subscribe(res => {
+      this.result = res;
+      this.result = res;
+      this.alert = true;
+      this.message = f.data.length + ' Databases has been restored successfully'
+      this.buttonList = ['Close'];
+    }, err => {
+      this.result = err;
+    })
+  }
+
   public getLatestBackup(): void {
     this.result = 'Requesting please wait...';
     this.commonService.latestBackedUpAllDatabases().pipe(takeUntil(this.destroy$)).subscribe(r => {
