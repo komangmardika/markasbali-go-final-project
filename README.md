@@ -1,5 +1,5 @@
 # GO backup and restore databases
-this repo maintained by <b>Komang Mardika</b> with contributor <b>Dewa Antasena</b><br>
+this repo maintained by <b>Komang Mardika</b><br>
 
 This is a repo for <br><b>markasbali ft kominfo final project for hacker class: programming with golang</b> <br>
 The app features such as backup and restore multiple database, it implements some go great features such as:
